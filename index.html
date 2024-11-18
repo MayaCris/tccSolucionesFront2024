@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg menu navbar-dark fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="./assets/img/logo.png" alt="logo" width="40" height="30">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#linkbodega">Bodegas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#linkmercancia">Mercancías</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="bg-dark">
+        <section class="banner text-white fw-bold">
+            <h3>Gestión TCC App</h3>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam quia eos necessitatibus, impedit sint similique animi ipsam magnam hic magni saepe maiores doloremque vel, sit, voluptatum quis ut ipsum quas!
+            </p>
+            <a href="#section2" class="btn btn-outline-warning">Ver mas</a>
+        </section>
+        <section class="container my-5 " id="section2">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="bg-black text-white text-center h-100 p-5 shadow">
+                        <h3>Servicio 1</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, culpa tempora possimus mollitia atque, magni quo magnam quam praesentium deleniti accusamus. Eum laborum quasi nihil sit deleniti incidunt quam neque.
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-black text-white text-center card h-100 p-5 shadow">
+                        <h3>Servicio 2</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, culpa tempora possimus mollitia atque, magni quo magnam quam praesentium deleniti accusamus. Eum laborum quasi nihil sit deleniti incidunt quam neque.
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-black text-white text-center card h-100 p-5 shadow">
+                        <h3>Servicio 3</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, culpa tempora possimus mollitia atque, magni quo magnam quam praesentium deleniti accusamus. Eum laborum quasi nihil sit deleniti incidunt quam neque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="linkbodega">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <img src="./assets/img/logistico2.png" alt="aux" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-4 align-self-center" >
+                    <h3 class="text-center text-white fw-bold">Gestion TCC App</h3>
+                    <h5 class="text-center text-white">Registra una bodega dentro de nuestro cuarto de soluciones</h5>
+                    <form class="p-5 border rounded shadow mt-3" >
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-house-add-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Nombre Zona" id="nombrezonabodega">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-box-fill"></i>
+                            </span>
+                            <input type="number" class="form-control" placeholder="Capacidad maxima volumen" id="capacidadmaximavolumen">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-house-add-fill"></i>
+                            </span>
+                            <input type="number" class="form-control" placeholder="Capacidad maxima peso" id="capacidadmaximapeso">
+                        </div>
+                        <button class="btn btn-warning w-100" id="botonRegistroBodega">Registrar</button>
+                       
+                    </form>
+                </div>
+            </div>
+
+        </section>
+        
+        <section class="container" id="linkmercancia">
+            <hr>
+            <div class="row justify-content-center" >
+                <div class="col-12 col-md-8 text-white">
+                    <h3 class="text-center text-white">Registro de mercancía en cuarto de soluciones</h3>
+
+                    <form class="p-5 shadow border rounded my-5">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Volumen:</label>
+                                <input type="number" class="form-control" id="volumenmercancia">
+                            </div>                      
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Peso:</label>
+                                <input type="number" class="form-control" id="pesomercancia">
+                            </div>                      
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="nombremercancia">
+                            </div>                      
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Tipo Destinatario:</label>
+                                <input type="text" class="form-control" id="tipodestinatariomercancia">
+                            </div>                      
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Departamento:</label>
+                                <input type="text" class="form-control" id="departamentomercancia">
+                            </div>                      
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Ciudad:</label>
+                                <input type="text" class="form-control" id="ciudadmercancia">
+                            </div>                      
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Nombre Destinatario:</label>
+                                <input type="text" class="form-control" id="nombredestinatariomercancia">
+                            </div>                      
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Dirección:</label>
+                                <input type="text" class="form-control" id="direccionmercancia">
+                            </div>                      
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Fecha de Ingreso:</label>
+                                <input type="date" class="form-control" id="fechaingresomercancia">
+                            </div>                      
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Fecha de Salida:</label>
+                                <input type="date" class="form-control" id="fechasalidamercancia">
+                            </div>                      
+                        </div>
+                        <div class="row my-4">
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-label">Bodega:</label>
+                                <select name="text" class="form-control" id="bodega">
+                                    <option value="" >Seleccione una bodega</option>
+                                </select>
+                            </div>                      
+                                                 
+                        </div>
+                        <button class="btn btn-warning w-100" type="submit" id="botonRegistroMercancia">Registrar Mercancía</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="container">
+            <h3 class="text-center text-white my-5">Mercancías registradas</h3>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th>Producto</th>
+                            <th>Volumen</th>
+                            <th>Peso</th>
+                            <th>Dirección</th>
+                            <th>Fecha Ingreso</th>
+                            <th>Bodega</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table table-dark table-group-divider" id="filatabla">
+
+                    </tbody>
+                </table>
+            </div>
+            
+        </section>
+<!-- 
+        <section class="container my-5">
+            <div class="row row-cols-1 row-cols-md-3 g-3" id="fila">
+
+            </div>
+        </section> -->
+    </main>
+    
+    <footer class="container-fluid g-0 bg-dark p-5 border-top">
+        <div class="row justify-content-center text-white">
+            <div class="col-12 col-md-4 text-end border-end">
+                <p>Cristian Maya G &copy;</p>
+                <p>TCC</p>
+                <p>Medellin</p>
+                <p>2024</p>
+            </div>
+            <div class="col-12 col-md-4 align-self-center">
+                <a href="" class=""><i class="bi bi-github fs-1 mx-2"></i></a>
+                <a href=""><i class="bi bi-twitch fs-1 mx-2"></i></a>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./src/controllers/controladorMercancia.js" type="module"></script>
+    <script src="./src/controllers/controladorZonaBodega.js" type="module"></script>
+</body>
+</html>
