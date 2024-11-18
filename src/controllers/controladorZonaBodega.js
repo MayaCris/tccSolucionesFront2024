@@ -24,6 +24,7 @@ botonRegistroBodega.addEventListener('click', function(evento){
             });
             return;
         }
+        console.log("Objeto bodega:", objetoBodega);
         registrarBodega(objetoBodega)
         .then(function(respuesta){
             if(respuesta){

@@ -1,6 +1,7 @@
 import { registrarMercancia } from "../services/servicioRegistrarMercancia.js";
 import { consultarMercancias } from "../services/servicioConsultarMercancia.js";
 import { consultarBodegas } from "../services/servicioConsultarBodegas.js";
+import { consultarBodegaPorId } from "../services/servicioConsultarBodegaPorId.js";
 
 let botonRegistroMercancia = document.getElementById('botonRegistroMercancia');
 let pesoMercancia = document.getElementById('pesomercancia');
@@ -13,11 +14,13 @@ let nombreDestinatarioMercancia = document.getElementById('nombredestinatariomer
 let direccionMercancia = document.getElementById('direccionmercancia');
 let fechaIngresoMercancia = document.getElementById('fechaingresomercancia');
 let fechaSalidaMercancia = document.getElementById('fechasalidamercancia');
-let idBodega = null;
+let idBodega = 0;
+
 
 document.getElementById('bodega').addEventListener('change', function() {
     idBodega = this.value;
     console.log("ID de la bodega seleccionada:", idBodega)
+    
 });
 
 
@@ -36,7 +39,9 @@ botonRegistroMercancia.addEventListener('click', function(evento) {
         direccion: direccionMercancia.value,
         fechaIngreso: fechaIngresoMercancia.value,
         fechaSalida: fechaSalidaMercancia.value,
-        idZona: idBodega
+        zonaBodega: {
+            idZona: idBodega
+        }
     }
 
     //Llmando a la API
