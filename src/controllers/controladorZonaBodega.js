@@ -24,7 +24,6 @@ botonRegistroBodega.addEventListener('click', function(evento){
             });
             return;
         }
-        console.log("Objeto bodega:", objetoBodega);
         registrarBodega(objetoBodega)
         .then(function(respuesta){
             if(respuesta){
@@ -41,28 +40,60 @@ botonRegistroBodega.addEventListener('click', function(evento){
 
 });
 
-//Llmando a la API
 
 //Llamando al servicio de consulta de bodegas
-let filaBodegas=document.getElementById('bodega')
+let selectBodegas=document.getElementById('bodega')
 consultarBodegas()
 .then(function(respuesta){
-    console.log("La respuesta de bodegas es: ", respuesta)
     if(Array.isArray(respuesta)){
         respuesta.forEach(function(bodega){
             let option=document.createElement('option');
             option.textContent=bodega.nombreZona;
             option.value=bodega.idZona;
 
-            filaBodegas.appendChild(option);
+            selectBodegas.appendChild(option);
         });
-    }
-        
-})
+    }   
+});
+
+//Creación de tabla de bodegas
+let filatablabodega=document.getElementById('filatablabodega')
+consultarBodegas()
+.then(function(respuesta){
+    if(Array.isArray(respuesta)){
+        respuesta.forEach(function(bodega){
+            let fila=document.createElement('tr');
+            
+            let colIdZona=document.createElement('td');
+            colIdZona.textContent=bodega.idZona;
+
+            let colNombre=document.createElement('td');
+            colNombre.textContent=bodega.nombreZona;
+            
+            let colCapacidadMaxPeso=document.createElement('td');
+            colCapacidadMaxPeso.textContent=bodega.capacidadMaximaPeso;
+
+            let colCapacidadOcupadaPeso=document.createElement('td');
+            colCapacidadOcupadaPeso.textContent=bodega.capacidadPesoOcupado;
+
+            let colVolumen=document.createElement('td');
+            colVolumen.textContent=bodega.capacidadMaximaVolumen;
+
+            let colCapacidadOcupadaVolumen=document.createElement('td');
+            colCapacidadOcupadaVolumen.textContent=bodega.capacidadVolumenOcupado;
+
+            fila.appendChild(colIdZona);
+            fila.appendChild(colNombre);
+            fila.appendChild(colCapacidadMaxPeso);
+            fila.appendChild(colCapacidadOcupadaPeso);
+            fila.appendChild(colVolumen);
+            fila.appendChild(colCapacidadOcupadaVolumen);
+            filatablabodega.appendChild(fila)
+        });
+    }});
 
 document.getElementById('bodega').addEventListener('change', function() {
     if (this.value === "") {
-        //Cambiar alerta por un mensaje en pantalla
         Swal.fire({
             icon: "error",
             title: "Oops...",

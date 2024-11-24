@@ -71,69 +71,39 @@ botonRegistroMercancia.addEventListener('click', function(evento) {
 
 });
 
-//Llamando al servicio de consulta de mercancia
-// let fila=document.getElementById('fila')
-// consultarMercancias()
-// .then(function(respuesta){
-//     console.log("La respuesta de mercancía es: ", respuesta)
-//     if(Array.isArray(respuesta)){
-//         respuesta.forEach(function(mercancia){
-        
-//             let columna=document.createElement('div');
-//             columna.classList.add('col');
-    
-//             let tarjeta=document.createElement('div');
-//             tarjeta.classList.add('card', "h-100", "shadow", "p-5");
-            
-//             let nombreMercancia=document.createElement('h3');
-//             nombreMercancia.textContent=mercancia.nombre;
-    
-//             let fechaIngresoMercancia=document.createElement('h4');
-//             fechaIngresoMercancia.textContent=mercancia.fechaIngreso;
-
-//             tarjeta.appendChild(nombreMercancia);
-//             tarjeta.appendChild(fechaIngresoMercancia);
-//             columna.appendChild(tarjeta);
-//             fila.appendChild(columna)
-    
-//         });
-//     }
-
-// });
 
 let filatabla=document.getElementById('filatabla')
 consultarMercancias()
 .then(function(respuesta){
-    console.log("La respuesta de mercancía es: ", respuesta)
     if(Array.isArray(respuesta)){
         respuesta.forEach(function(mercancia){
         
             let fila=document.createElement('tr');
     
-            let columna1=document.createElement('td');
-            columna1.textContent=mercancia.nombre;
+            let colNombre=document.createElement('td');
+            colNombre.textContent=mercancia.nombre;
     
-            let columna2=document.createElement('td');
-            columna2.textContent=mercancia.volumen;
+            let colVolumen=document.createElement('td');
+            colVolumen.textContent=mercancia.volumen;
 
-            let columna3=document.createElement('td');
-            columna3.textContent=mercancia.peso;
+            let colPeso=document.createElement('td');
+            colPeso.textContent=mercancia.peso;
 
-            let columna4=document.createElement('td');
-            columna4.textContent=mercancia.direccion;
+            let colDireccion=document.createElement('td');
+            colDireccion.textContent=mercancia.direccion;
 
-            let columna5=document.createElement('td');
-            columna5.textContent=mercancia.fechaIngreso;
+            let colFechaIngreso=document.createElement('td');
+            colFechaIngreso.textContent=mercancia.fechaIngreso;
 
-            let columna6=document.createElement('td');
-            columna6.textContent=mercancia.nombreZona;
+            let colNombreBodega=document.createElement('td');
+            colNombreBodega.textContent=mercancia.nombreZona;
 
-            fila.appendChild(columna1);
-            fila.appendChild(columna2);
-            fila.appendChild(columna3);
-            fila.appendChild(columna4);
-            fila.appendChild(columna5);
-            fila.appendChild(columna6);
+            fila.appendChild(colNombre);
+            fila.appendChild(colVolumen);
+            fila.appendChild(colPeso);
+            fila.appendChild(colDireccion);
+            fila.appendChild(colFechaIngreso);
+            fila.appendChild(colNombreBodega);
             filatabla.appendChild(fila)
     
         });
